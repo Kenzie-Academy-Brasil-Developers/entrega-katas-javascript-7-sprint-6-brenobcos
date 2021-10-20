@@ -110,6 +110,47 @@ function newIncludes(array, num, start = 0){
 }
 
 
-// function newIndexOf(){}
-// function newConcaz(){}
-// function newJoin(){}
+function newIndexOf(array, element, fromIndex = 0){
+  for (let i = fromIndex; i < array.length; i++){
+    
+      if (array[i] === element){
+        return i
+      }
+  }
+  return -1
+}
+
+
+function newConcat(){
+  let array = [...arguments]
+  let concat = []
+
+  for(let i = 0; i < array.length; i++){
+    concat.push(array[i])
+  }
+
+  return concat
+}
+
+
+function newJoin(array, separator){
+  let result = ''
+
+  for (let i = 0; i < array.length; i++){
+      result += array[i]
+
+      if(i !== array.length - 1){
+          result += separator
+      }
+  }
+  return result
+}
+
+// // function slice(){
+
+
+// }
+
+
+// function flat(){}
+// function flatMap(){}
