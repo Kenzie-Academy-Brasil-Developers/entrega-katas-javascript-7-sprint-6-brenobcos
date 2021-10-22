@@ -4,6 +4,7 @@ function newForEach(array, callback){
     }
 }
 
+newForEach(list, myCallbackForEach)
 
 function newMap(array, callback){
     let newArray = []
@@ -17,6 +18,7 @@ function newMap(array, callback){
     return newArray
 }
 
+console.log(newMap(listNum, myCallbackMap))
 
 function newFilter(array,callback){
   let result = []
@@ -30,6 +32,7 @@ function newFilter(array,callback){
   return result
 }
 
+console.log(newFilter(listNum, myCallbackFilter))
 
 function newFind(array, callback){
   let result
@@ -44,6 +47,7 @@ function newFind(array, callback){
   }
 }
 
+console.log(newFind(listNum, myCallbackFind))
 
 function newFindIndex(array,callback){
   
@@ -55,6 +59,7 @@ function newFindIndex(array,callback){
   }
 }
 
+console.log(newFindIndex(listNum, myCallbackFindIndex))
 
 function newReduce(array, callback, initialValue){
   let acc = initialValue || 0
@@ -66,6 +71,7 @@ function newReduce(array, callback, initialValue){
   return acc 
 }
 
+console.log(newReduce(listNum, myCallbackReduce))
 
 function newSome(array, callback){
   let result
@@ -78,6 +84,7 @@ function newSome(array, callback){
   return result
 }
 
+console.log(newSome(listNum, myCallbackSome))
 
 function newEvery(array, callback){
   for(let i = 0; i < array.length; i++){
@@ -88,6 +95,7 @@ function newEvery(array, callback){
   return true
 }
 
+console.log(newEvery(listNum, myCallbackEvery))
 
 function newFill(array, num, start = 0, end = array.length){
 
