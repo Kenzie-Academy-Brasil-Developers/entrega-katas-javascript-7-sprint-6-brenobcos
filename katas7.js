@@ -73,15 +73,15 @@ function newReduce(array, callback, initialValue){
 
 console.log(newReduce(listNum, myCallbackReduce))
 
-function newSome(array, callback){
-  let result
-
+function newSome(array,callback){
   for(let i = 0; i < array.length; i++){
-    result = callback(array[i], i, array)
 
+      if(callback(array[i], i, array)){
+          return true
+      }
   }
 
-  return result
+  return false
 }
 
 console.log(newSome(listNum, myCallbackSome))
@@ -129,16 +129,20 @@ function newIndexOf(array, element, fromIndex = 0){
 }
 
 
-function newConcat(){
-  let array = [...arguments]
-  let concat = []
+function newConcat(...arrays){
+    let result = []
 
-  for(let i = 0; i < array.length; i++){
-    concat.push(array[i])
-  }
+    for(let i = 0; i < arrays.length; i++){
+        let concat = arrays[i]
 
-  return concat
+        for(let j = 0; j < concat.length; j++){
+            result.push(concat[j])
+        }
+    }
+    return result
 }
+
+console.log(newConcat(listNum, list))
 
 
 function newJoin(array, separator){
